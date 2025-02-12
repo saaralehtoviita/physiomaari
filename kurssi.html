@@ -10,28 +10,26 @@
 <body>
     <div class="container">
     <h1>JSON testi sivu</h1>
-    <div id="vastaus"></div>
-    
-    <script>
-        function kerro(data){
-            var teksti = "";
-            teksti = "<p>" + data.sisalto + "</p>";
-            document.getElementById("vastaus").innerHTML = teksti;
-        }
-        fetch('#')
-        .then(function (response) {
-            return response.json();
-        })
 
-        .then(function (responseJson) {
-            kerro(responseJson);
-        })
+    <table>
+        <thead>
+            <tr>
+                <th>Otsikko</th>
+                <th>Kuvaus</th>
+                <th>Nimi</th>
+                <th>Tunnus</th>
+                <th>Laajus (opintopisteissä)</th>
+                <th>Sisältö</th>
+                <th>Tekniikat</th>
+            </tr>
+        </thead>
+        <tbody id="data-output">
 
-        .catch(function (error) {
-            document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>"
-        })
-    </script>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
 </div>
+
 </body>
 
 </html>
