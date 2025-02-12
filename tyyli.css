@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(175, 228, 219);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0; /* Poistetaan margin, koska se siirrettiin .container-luokkaan */
+    display: flex; /* Lisää flexbox */
+    justify-content: center; /* Keskittää kaiken vaakasuunnassa */
+    align-items: center; /* Keskittää pystysuunnassa */
+    height: 100vh; /* Asettaa täyden näkymäkorkeuden */
+}
+
+/* Oletustyyli (pienet näytöt, kuten puhelimet) */
+.container {
+    padding: 10px;
+}
+
+/* Tabletit (minimi 768px leveä näyttö) */
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 50px;
+    }
+}
+
+/* Tietokoneet (minimi 1024px leveä näyttö) */
+@media screen and (min-width: 1024px) {
+    .container {
+        padding: 100px;
+    }
+}
