@@ -1,26 +1,24 @@
 fetch('https://saaralehtoviita.github.io/digitekniikat/tiedot.JSON')
-.then (function(response) {
+.then(function(response) {
     return response.json();
 })
-.then(function(tiedot) {
+.then(function(tieto) {
     let placeholder = document.querySelector("#data-output");
-    let out = "";
+    let out = `
+        <div class="data-item">
+            <h3>${tieto.otsikko}</h3>
+            <p><strong>Kuvaus:</strong> ${tieto.kuvaus}</p>
+            <p><strong>Nimi:</strong> ${tieto.nimi}</p>
+            <p><strong>Tunnus:</strong> ${tieto.tunnus}</p>
+            <p><strong>Opintopisteet:</strong> ${tieto.opintopisteet}</p>
+            <p><strong>Sisältö:</strong> ${tieto.sisalto.join(', ')}</p>
+            <p><strong>Tekniikat:</strong> ${tieto.tekniikat.map(tekniikka => `<a href="${tekniikka.linkki}">${tekniikka.aihe}</a>`).join(', ')}</p>
+            <img src="${tieto.kuva}" alt="Opintojakson kuva" style="max-width: 100%; height: auto;"/>
+        </div>
+    `;
 
-        out += `
-        <tr> 
-            <td>${tiedot.otsikko}</td>
-            <td>${tiedot.kuvaus}</td>
-            <td>${tiedot.nimi}</td>
-            <td>${tiedot.tunnus}</td>
-            <td>${tiedot.opintopisteet}</td>
-            <td>${tiedot.sisalto.join(', ')}</td>
-            <td>
-                ${tiedot.tekniikat.map(tekniikka => `<a href="${tekniikka.linkki}">${tekniikka.aihe}</a>`).join(', ')}
-            </td>
-        </tr>
-        `;
-        placeholder.innerHTML = out;
-    })
+    placeholder.innerHTML = out;
+})
 .catch(function(error) {
-    document.getElementById("data-output").innerHTML = "<tr><td colspan='7'>Tietoa ei pystytä hakemaan</td></tr>";
+    document.getElementById("data-output").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
 });

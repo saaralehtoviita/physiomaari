@@ -1,70 +1,40 @@
 body {
     background-color: rgb(175, 228, 219);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0; /* Poistetaan margin, koska se siirrettiin .container-luokkaan */
-    display: flex; /* Lisää flexbox */
-    justify-content: center; /* Keskittää kaiken vaakasuunnassa */
-    align-items: center; /* Keskittää pystysuunnassa */
-    height: 100vh; /* Asettaa täyden näkymäkorkeuden */
+    font-family: 'Lucida Sans', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-
-/* Oletustyyli (pienet näytöt, kuten puhelimet) */
-.container {
-    padding: 10px;
-}
-
-/* Tabletit (minimi 768px leveä näyttö) */
-@media screen and (min-width: 768px) {
-    .container {
-        padding: 50px;
+@media screen and (min-width: 500px) {
+    body {
+        margin: 30px;
     }
 }
-
-/* Tietokoneet (minimi 1024px leveä näyttö) */
-@media screen and (min-width: 1024px) {
-    .container {
-        padding: 100px;
+@media screen and (min-width: 750px) {
+    body {
+        margin: 50px;
     }
 }
 
-/* Taulukon tyylit normaalikokoisilla näytöillä */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Yksinkertaistetut tyylit tiedoille */
+#data-output {
+    padding: 20px;
+    background-color: lightgrey;
+    border-radius: 8px;
+    border-color: black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 900px;
+    text-decoration: none;
 }
 
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
+/* Tiedon kenttien väli */
+.data-item {
+    margin-bottom: 20px;
 }
 
-/* Listanäkymä pienillä näytöillä (max-width: 768px) */
-@media screen and (max-width: 768px) {
-    table {
-        display: none; /* Piilottaa taulukon */
-    }
-    
-    /* Muutetaan taulukon rivit listan muotoon */
-    .data-list {
-        display: block;
-        margin-top: 20px;
-    }
-    
-    .data-list .data-item {
-        margin-bottom: 15px;
-        padding: 10px;
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-    }
-
-    .data-list .data-item h3 {
-        margin: 0;
-        font-size: 16px;
-    }
-
-    .data-list .data-item p {
-        margin: 5px 0;
-    }
+.data-item h3 {
+    margin-top: 0;
 }
