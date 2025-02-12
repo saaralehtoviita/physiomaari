@@ -1,20 +1,23 @@
 fetch('https://saaralehtoviita.github.io/digitekniikat/tiedot.JSON')
-.then (function(response){
+.then (function(response) {
     return response.json();
-}
-)
-.then(function(tiedot){
+})
+.then(function(tiedot) {
     let placeholder = document.querySelector("#data-output");
     let out = "";
     for(let tieto of tiedot) {
         out += `
-            <tr> 
+        <tr> 
             <td>${tieto.otsikko}</td>
             <td>${tieto.kuvaus}</td>
             <td>${tieto.nimi}</td>
             <td>${tieto.tunnus}</td>
             <td>${tieto.opintopisteet}</td>
-            </tr>
+            <td>${tieto.sisalto.join(', ')}</td>
+            <td>
+                ${tieto.tekniikat.map(tekniikka => `<a href="${tekniikka.linkki}">${tekniikka.aihe}</a>`).join(', ')}
+            </td>
+        </tr>
         `;
     }
     placeholder.innerHTML = out;
