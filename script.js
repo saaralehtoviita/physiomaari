@@ -1,4 +1,4 @@
-fetch("tiedot.JSON")
+fetch('https://saaralehtoviita.github.io/digitekniikat/tiedot.JSON')
 .then (function(response){
     return response.json();
 }
