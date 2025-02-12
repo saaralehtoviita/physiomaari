@@ -26,10 +26,45 @@ body {
         padding: 100px;
     }
 }
-.pre {
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    padding: 15px;
-    border-radius: 5px;
+
+/* Taulukon tyylit normaalikokoisilla näytöillä */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Listanäkymä pienillä näytöillä (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    table {
+        display: none; /* Piilottaa taulukon */
+    }
+    
+    /* Muutetaan taulukon rivit listan muotoon */
+    .data-list {
+        display: block;
+        margin-top: 20px;
+    }
+    
+    .data-list .data-item {
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+    }
+
+    .data-list .data-item h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .data-list .data-item p {
+        margin: 5px 0;
+    }
 }
