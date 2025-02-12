@@ -7,10 +7,10 @@ fetch('https://saaralehtoviita.github.io/digitekniikat/toteutus25.JSON')
     let out = `
         <div class="data-item">
             <h3>${tieto.toteutuksenNimi}</h3>
-            <p><strong>Kuvaus:</strong> ${tieto.osallistujenLukumaara}</p>
-            <p><strong>Nimi:</strong> ${tieto.osallistujenNimet.join(', ')}</p>
-            <p><strong>Tunnus:</strong> ${tieto.toteutuksenAjankohta}</p>
-            <p><strong>Opintopisteet:</strong> ${tieto.toteutuksenKestoViikkoina}</p>
+            <p><strong>Osallistujen lukumäärä:</strong> ${tieto.osallistujenLukumaara}</p>
+            <p><strong>Osallistujen nimet:</strong> ${tieto.osallistujenNimet.join(', ')}</p>
+            <p><strong>TToteutuksen ajankohta:</strong> ${tieto.toteutuksenAjankohta}</p>
+            <p><strong>Toteutuksen kesto viikkoina:</strong> ${tieto.toteutuksenKestoViikkoina}</p>
             <img src="${tieto.kuva}" alt="Opintojakson kuva" style="max-width: 100%; height: auto;"/>
         </div>
     `;
