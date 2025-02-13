@@ -1,30 +1,62 @@
 body {
     background-color: rgb(175, 228, 219);
     font-family: 'Lucida Sans', sans-serif;
-    margin: 0;
+    margin: 0px; /*navbarin marginaali pois */
+}
+main{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    text-align: center;
+    margin-left: 20px;
+    margin right: 20px;
 }
-@media screen and (min-width: 500px) {
-    body {
-        margin: 30px;
-    }
+h1 {
+    text-align: center;
 }
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+
 @media screen and (min-width: 750px) {
-    body {
+    main {
+        margin: 50px;
+    }
+    h1{
         margin: 50px;
     }
 }
-
-/* Yksinkertaistetut tyylit tiedoille */
+.navbar ul {
+    list-style-type: none;
+    background-color: rgb(12, 3, 58);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    text-align: center;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: rgb(46, 117, 141);
+}
+.navbar li{
+    float: left;
+}
+/* tyylit tiedoille */
 #data-output {
     padding: 20px;
     background-color: lightgrey;
     border-radius: 8px;
     border-color: black;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 900px;
 }
@@ -35,5 +67,6 @@ body {
 }
 
 .data-item h3 {
-    margin-top: 0;
+    margin-top: 20px;
 }
+
