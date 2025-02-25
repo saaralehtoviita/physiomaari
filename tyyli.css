@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(175, 228, 219);
+    background-color: rgb(95, 212, 216);
     font-family: 'Lucida Sans', sans-serif;
     margin: 0px; /*navbarin marginaali pois */
 }
@@ -70,3 +70,17 @@ a{
     margin-top: 20px;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;    
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px; /* Adds space inside the cells */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: rgb(50, 166, 170); /* Light gray background for headers */
+}
