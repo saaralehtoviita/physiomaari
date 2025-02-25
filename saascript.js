@@ -1,7 +1,6 @@
  /*doing the request*/
 
 function renderWeather(weather) {
-    //console.log(weather);
     var resultsContainer = document.querySelector('#saatiedot');
     //kaupunki=name, sää=main & description, lämpötila=temp, tuulen nopeus=speed
 
@@ -49,6 +48,7 @@ function renderWeather(weather) {
 }
 
 //haetaan tiedot
+//${kaupunki} korvataan funktiossa kaupungilla, jonka säätiedot haetaan
 
 function fetchWeather(kaupunki) {
     var url = `https://api.openweathermap.org/data/2.5/weather?q=${kaupunki}&units=metric&lang=fi&appid=452ddea81cd8573bad58e9b9796c8cf0`;
