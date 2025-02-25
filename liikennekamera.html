@@ -17,13 +17,27 @@
                 <li><a href="liikennekamera.html">Sää</a></li>
             </ul>
         </nav>
-        <h1>Säätiedot</h1>
-        <p>Alla olevan taulukon säätiedot on haettu <a href= https://openweathermap.org/> OpenWeather </a>-sivulta</p>
-        
+        <h1>Liikennekamera</h1>
+        <p>Tälle sivulle haetaan Liikennekameratietoja.</p>
         <main>
-            <div id="saatiedot"></div>
-            <script src="saascript.js">
-            </script>    
+            <div id="liikennekameratiedot"></div>
+            <script>
+                function renderTraffic(){
+
+                }
+                function fetchTraffic(){
+                    fetch("")
+                    .then((response) => response.json)
+                    .then((data) => renderTraffic(data))
+                    .catch(error => console.error("Liikennetietoja ei voitu hakea", error))
+                }
+                fetchTraffic();
+
+
+            </script>
+        
+
+        
     </main>
 </body>
 </html>

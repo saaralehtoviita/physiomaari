@@ -48,7 +48,7 @@ function renderWeather(weather) {
     taulukko.appendChild(rivi);
 }
 
-/*displaying results, fetch weather data for a city*/
+//haetaan tiedot
 
 function fetchWeather(kaupunki) {
     var url = `https://api.openweathermap.org/data/2.5/weather?q=${kaupunki}&units=metric&lang=fi&appid=452ddea81cd8573bad58e9b9796c8cf0`;
