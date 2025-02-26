@@ -68,16 +68,21 @@ a {
 }
 
 /* tyylit tiedoille */
-#data-output {
-    padding: 20px;
+#vastaus {
+    padding: 15px;
     background-color: lightgrey;
     border-radius: 8px;
     border-color: black;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    width: 100%;
     max-width: 900px;
 }
-
+#vastaus a { /*linkkien tyylit*/
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;/*korvaa tekstin "..." jos on liian pitkä*/
+    max-width: 100%;
+}
 /* Tiedon kenttien väli */
 .data-item {
     margin-bottom: 20px;
