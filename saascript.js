@@ -25,9 +25,10 @@ function renderWeather(weather) {
 
 }
 
-    //luodaan rivi kaupungille
+    //luodaan rivi tiedoille
     var rivi = document.createElement("tr");
 
+    //luodaan yksittäiset solut 
     var kaupunkiSolu = document.createElement("td");
     kaupunkiSolu.textContent = weather.name;
     rivi.appendChild(kaupunkiSolu);
@@ -53,7 +54,7 @@ function renderWeather(weather) {
 function fetchWeather(kaupunki) {
     var url = `https://api.openweathermap.org/data/2.5/weather?q=${kaupunki}&units=metric&lang=fi&appid=452ddea81cd8573bad58e9b9796c8cf0`;
 
-    fetch(url)
+    fetch(url) /*osoite määräytyy url-muuttujan ja fetchWeather olevan Kaupungin mukaan*/
         .then((response) => response.json())
         .then((data) => renderWeather(data))
         .catch(error => console.error("Säätietoja ei voitu hakea", error))

@@ -19,13 +19,13 @@
         </nav>
         <main>
             <div id="vastaus"></div>
-        <script>
+        <script> /*funktio, jolla haetaan tiedot*/
             fetch('https://api.visittampere.com/api/v1/visittampere/event/published/all/?format=json&lang=fi')
             .then(function (response) {
                 return response.json();
             })
 
-            .then(function(data) {
+            .then(function(data) { /*funktio, jolla näytetään tiedot*/
                 var teksti = "";
                 teksti = "<h1>Tampereella tapahtuu</h1>";
                 for (var i = 0; i < data.length; i++) {  
