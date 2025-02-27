@@ -17,23 +17,39 @@
                 <li><a href="liikennekamera.html">Liikennekamera</a></li>
             </ul>
         </nav>
-        <h1>Liikennekamera</h1>
+        <h1>Liikennekamera - Autolla Tampereelle</h1>
         <p>Tälle sivulle haetaan Liikennekameratietoja.</p>
         <main>
             <div id="liikennekameratiedot"></div>
             <script>
-                function renderTraffic(){
+                    fetch('https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/data')
+                        .then(response => response.json())
+                        .then(data => {
+                        console.log(data); // Tarkista mitä API palauttaa selaimen konsolista
+                        let tiedot = document.getElementById("liikennekameratiedot");
 
-                }
-                function fetchTraffic(){
-                    fetch("")
-                    .then((response) => response.json)
-                    .then((data) => renderTraffic(data))
-                    .catch(error => console.error("Liikennetietoja ei voitu hakea", error))
-                }
-                fetchTraffic();
+                        if (data.presets && data.presets.length > 0) {
+                        let teksti = `<h2>Autolla Tampereelle - Liikennekamera</h2>`;
+                        teksti += `<p>Päivitetty: ${data.dataUpdatedTime}</p>`;
 
+                        for (let i = 0; i < data.presets.length; i++) {
+                            let kuva = data.presets[i]; //tehdään muuttuja kuva joka löytyy json tiedoston data.presets paikalta
+                            let kuvaUrl = `https://weathercam.digitraffic.fi/${kuva.id}.jpg`;
+                            teksti += `<h3>${kuva.id}</h3>`;
+                            teksti += `<p>Kuva otettu: ${kuva.measuredTime}</p>`; 
+                            teksti += `<img src="${kuvaUrl}" alt="Kuva liikenteestä" style="width: 100%">`;
+                        }
 
+                        tiedot.innerHTML = teksti;
+                        } else {
+                        tiedot.innerHTML = "<p>Ei liikennekameran tietoja saatavilla.</p>";
+                        }
+                     })
+                    .catch(error => console.error("Error fetching data:", error));
+ 
+ 
+                
+            
             </script>
         
 
