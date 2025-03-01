@@ -29,14 +29,14 @@
             .then(function(data) { /*funktio, jolla näytetään tiedot*/
                 var teksti = "";
                 teksti = "<h1>Tampereella tapahtuu</h1>";
-                for (var i = 0; i < data.length; i++) {  
+                for (var i = 0; i < data.length; i++) {   //käydään läpi taulukko
                     teksti = teksti + "<h3>" + data[i].title + "</h3>";
                     /*alla omaa testailua miten tiedot näkyvät*/
                     /*teksti = teksti + "<p>" + data[i].id;*/
                     /*teksti = teksti + "<p>" + data[i].slug;*/
                     teksti = teksti + "<p>" + data[i].description + "</p>";
                     teksti = teksti + "<p><a href='" + data[i].url + "'>" + 
-                        data[i].url + "</a></p>";
+                    data[i].url + "</a></p>";
                 }
                 document.getElementById("vastaus").innerHTML = teksti;
             })
