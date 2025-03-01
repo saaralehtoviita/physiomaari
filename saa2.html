@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <title>JSON harjoittelua</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tyyli.css">
+</head>
+<body>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="kurssi.html">Digitekniikat</a></li>
+                <li><a href="toteutus.html">Kevään 2025 toteutus</a></li>
+                <li><a href="tapahtumat.html">Tapahtumat</a></li>
+                <li><a href="saa2.html">Sää</a></li>
+                <li><a href="liikennekamera.html">Liikennekamera</a></li>
+                <li><a href="junat.html">Junat</a></li>
+            </ul>
+        </nav>
+        <h1>Säätiedot</h1>
+        <p>Alla olevan taulukon säätiedot on haettu <a href= https://openweathermap.org/> OpenWeather </a>-sivulta</p>
+        <table id="saatietoja">
+            <thead>
+                <tr>
+                    <th>Kaupunki</th>
+                    <th>Lämpötila (°C)</th>
+                    <th>Kuvaus</th>
+                    <th>Tuulen nopeus (m/s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Säätiedot tulevat tänne -->
+            </tbody>
+        </table>
+
+        
+        <main>
+            <script>
+                function fetchWeather(kaupunki) {
+                var url = `https://api.openweathermap.org/data/2.5/weather?q=${kaupunki}&units=metric&lang=fi&appid=452ddea81cd8573bad58e9b9796c8cf0`;
+                //urlin osoite määräytyy kaupungin mukaanj
+                fetch(url)
+                .then(response => response.json())  // Muutetaan vastaus JSON-objektiksi
+                .then(data => {
+                    let taulukko = document.querySelector("#saatietoja");
+
+                    let rivi = `
+                    <tr>
+                    <td>${data.name}</td>
+                    <td>${data.main.temp} °C</td>
+                        <td class="kuvau-ikoni">
+                        <div class="kuvaus-container">
+                            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="Sääkuvake">
+                            <span>${data.weather[0].description}</span>
+                        </div>
+                    </td>
+                    <td>${data.wind.speed} m/s</td>
+                    </tr>
+                    `;
+
+                taulukko.innerHTML += rivi;  // Lisätään uusi kaupunki vanhojen perään
+                })
+                .catch(error => console.error("Säätietoja ei voitu hakea", error));
+    } 
+
+// Haetaan säätiedot usealle kaupungille
+fetchWeather("Helsinki");
+fetchWeather("Tampere");
+fetchWeather("Barcelona");
+fetchWeather("Valencia");
+fetchWeather("Turku");
+
+            </script>
+    </main>
+</body>
+</html>

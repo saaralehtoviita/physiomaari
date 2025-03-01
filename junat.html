@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <title>JSON harjoittelua</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tyyli.css">
+</head>
+<body>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="kurssi.html">Digitekniikat</a></li>
+                <li><a href="toteutus.html">Kevään 2025 toteutus</a></li>
+                <li><a href="tapahtumat.html">Tapahtumat</a></li>
+                <li><a href="saa2.html">Sää</a></li>
+                <li><a href="liikennekamera.html">Liikennekamera</a></li>
+                <li><a href="junat.html">Junat</a></li>
+            </ul> 
+        </nav>
+        <h1>Juna-aikataulut Helsingistä Tampereelle</h1> 
+
+        <main>
+            <table> <!--Tähän palautuu scriptistä tiedot-->
+                <thead>
+                    <tr>
+                    <th>Junanumero</th>
+                    <th>Lähtöaika</th>
+                    <th>Lähtöpaikka</th>
+                    <th>Määränpää</th>
+                </tr>
+                </thead>
+                <tbody id="junatiedot1">
+
+                </tbody>
+
+
+            </table> 
+
+            <script>
+                //haetaan tiedot suluissa olevasta osoitteesta
+                fetch('https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?departing_trains=100&include_nonstopping=false')
+                .then(function(response) {
+                return response.json();
+            })
+            .then(function(tieto) {
+                let taulukko = ""; //luodaan muuttuja "taulukko" joka on ensin tyhjä
+                for (let i = 0; i < tieto.length; i++) { //käydään läpi koko json tiedosto
+                    for (let j = 0; j < tieto[i].timeTableRows.length; j++) { //käydään läpi sisempi TimeTableRows taulukko
+                        if (tieto[i].timeTableRows[j].stationShortCode=="TPE" //asetetaan ehdot, joiden mukaan tiedot näytetään
+                        && tieto[i].timeTableRows[j].type=="DEPARTURE" 
+                        && tieto[i].trainCategory=="Long-distance") {
+                        
+                        //luodaan muuttujat json-tiedoston tietojen perusteella
+                        var junatiedot = tieto[i].trainNumber + tieto[i].trainType;
+                        var pvm = tieto[i].timeTableRows[j].scheduledTime;
+                        var aika = pvm.substr(0, 10) + " klo: " + pvm.substr(11, 5);
+                        var lahtopaikka = tieto[i].timeTableRows[0].stationShortCode;
+                        var vika = tieto[i].timeTableRows.length - 1;
+                        var maaranpaa = tieto[i].timeTableRows[vika].stationShortCode;
+                        
+                        //luodaan taulukko, jonka tiedot korvautuvat juuri luotujen muuttujien perusteella
+                        taulukko += `<tr>
+                            <td>${junatiedot}</td>
+                            <td>${aika}</td>
+                            <td>${lahtopaikka}</td>
+                            <td>${maaranpaa}</td>
+
+                        </tr>`;
+                    }
+                }
+            }
+            document.getElementById("junatiedot1").innerHTML = taulukko; //taulukko-muuttujan tiedot "lähetetään" html-puolella kohtaan junatiedot1
+        })
+            .catch(function(error) { //virheiden näyttäminen, jos tietoja ei voida hakea
+                console.error("Virhe tietojenhaussa", error);
+                document.getElementById("junatiedot1").innerHTML = "<p>Junatietoja ei voitu ladata</p>";
+            });
+            </script>
+    
+        
+    </main>
+</body>
+</html>

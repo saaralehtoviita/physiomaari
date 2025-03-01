@@ -1,5 +1,3 @@
- /*doing the request*/
-
 function renderWeather(weather) {
     var resultsContainer = document.querySelector('#saatiedot');
     //kaupunki=name, sää=main & description, lämpötila=temp, tuulen nopeus=speed
@@ -64,4 +62,4 @@ fetchWeather("Helsinki");
 fetchWeather("Tampere");
 fetchWeather("Barcelona");
 fetchWeather("Valencia");
-fetchWeather("Turku");
+fetchWeather("Turku"); 

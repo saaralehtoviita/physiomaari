@@ -1,8 +1,10 @@
+
+//haetaan tiedot omasta JSON-tiedostosta
 fetch('https://saaralehtoviita.github.io/digitekniikat/toteutus25.JSON')
 .then(function(response) {
     return response.json();
 })
-.then(function(tieto) {
+.then(function(tieto) { //tieto = JavaScript objekti
     let placeholder = document.querySelector("#data-output");
     let out = `
         <div class="data-item">
@@ -15,7 +17,9 @@ fetch('https://saaralehtoviita.github.io/digitekniikat/toteutus25.JSON')
         </div>
     `;
 
-    placeholder.innerHTML = out;
+    placeholder.innerHTML = out; 
+    //out = muuttuja, jossa käytetään JSON-objektista saatuja tietoja
+    //join = liittää taulukon kaikki tiedot yhdeksi merkkijonoksi
 })
 .catch(function(error) {
     document.getElementById("data-output").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";

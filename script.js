@@ -1,9 +1,12 @@
+
+//haetaan tiedot omasta json-tiedostosta
 fetch('https://saaralehtoviita.github.io/digitekniikat/tiedot.JSON')
 .then(function(response) {
     return response.json();
 })
-.then(function(tieto) {
-    let placeholder = document.querySelector("#data-output");
+//missä muodossa tiedot näytetään 
+.then(function(tieto) { //tieto = JavaScript objekti
+    let placeholder = document.querySelector("#data-output");//#data-output määrittelee, mihin kohtaan html tiedostossa tiedot tulevat
     let out = `
         <div class="data-item">
             <h3>${tieto.otsikko}</h3>
@@ -17,8 +20,11 @@ fetch('https://saaralehtoviita.github.io/digitekniikat/tiedot.JSON')
         </div>
     `;
 
-    placeholder.innerHTML = out;
+    placeholder.innerHTML = out; 
+    //out = muuttuja, jossa käytetään JSON-objektista saatuja tietoja
+    //join = liittää taulukon kaikki tiedot yhdeksi merkkijonoksi
+    //map = muuttaa jokaisen tieto.tekniikat-taulukon tiedon HTML-linkiksi
 })
-.catch(function(error) {
+.catch(function(error) { //virheiden näyttäminen, jos tietoja ei voitu hakea
     document.getElementById("data-output").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
 });

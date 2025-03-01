@@ -39,9 +39,6 @@ a {
     overflow: hidden;
     text-align: center;
 }
-.navbar li{
-    margin: 0px;
-}
 .navbar a {
     color: white;
     text-decoration: none;
@@ -57,10 +54,6 @@ a {
 @media screen and (min-width: 750px) {
     .navbar ul {
         flex-direction: column;
-    }
-    .navbar li {
-        width: 100%;
-        text-align: center;
     }
     main {
         width: 95%;
@@ -87,7 +80,6 @@ a {
 .data-item {
     margin-bottom: 20px;
 }
-
 .data-item h3 {
     margin-top: 20px;
 }
@@ -97,11 +89,37 @@ table {
     border-collapse: collapse;
     width: 100%;    
 }
-th, td {
+th, td { /*taulukon otsikot ja tiedot*/
     border: 1px solid black;
-    padding: 10px; /* Adds space inside the cells */
-    text-align: left; /* Align text to the left */
+    padding: 10px; 
+    text-align: left; 
 }
-th {
-    background-color: rgb(50, 166, 170); /* Light gray background for headers */
+th { /*taulukon otsikot*/
+    background-color: rgb(50, 166, 170); 
 }
+/*Sään kuvaus ja sääikoni*/
+.kuvaus-container {
+    display: flex;         
+    align-items: center;  
+    gap: 8px;             
+    text-align: left;      
+}
+/*Sääikoni kuva*/
+.kuvaus-container img {
+    width: 40px;           
+    height: auto;          
+    flex-shrink: 0;       
+}
+
+/*pienet näytöt*/
+@media (max-width: 600px) {
+    .kuvaus-container {
+        flex-direction: column;  /*Pienillä näytöillä kuvake ja teksti allekkain*/
+        align-items: center;      
+    }
+
+    .kuvaus-container img {
+        width: 30px; /* Pienemmillä näytöillä pienempi kuvake*/
+    }
+}
+

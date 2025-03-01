@@ -13,8 +13,9 @@
                 <li><a href="kurssi.html">Digitekniikat</a></li>
                 <li><a href="toteutus.html">Kevään 2025 toteutus</a></li>
                 <li><a href="tapahtumat.html">Tapahtumat</a></li>
-                <li><a href="saa.html">Sää</a></li>
+                <li><a href="saa2.html">Sää</a></li>
                 <li><a href="liikennekamera.html">Liikennekamera</a></li>
+                <li><a href="junat.html">Junat</a></li>
             </ul>
         </nav>
         <h1>Liikennekamera - Autolla Tampereelle</h1>
@@ -22,20 +23,21 @@
         <main>
             <div id="liikennekameratiedot"></div>
             <script>
+                //haetaan tiedot digitrafficin sivuilta
                     fetch('https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/data')
-                        .then(response => response.json())
-                        .then(data => {
-                        console.log(data); // Tarkista mitä API palauttaa selaimen konsolista
+                        .then(response => response.json()) //muuttaa vastauksen JSOn-objektiksi
+                        .then(tieto => { //tieto = JSON-objekti
                         let tiedot = document.getElementById("liikennekameratiedot");
 
-                        if (data.presets && data.presets.length > 0) {
-                        let teksti = `<h2>Autolla Tampereelle - Liikennekamera</h2>`;
-                        teksti += `<p>Päivitetty: ${data.dataUpdatedTime}</p>`;
+                        if (tieto.presets && tieto.presets.length > 0) {
+                        let teksti = `<h2>Millainen sää on matkalla Tampereelle?</h2>`;
+                        /*teksti += `<p>Päivitetty: ${tieto.dataUpdatedTime}</p>`;*/
 
-                        for (let i = 0; i < data.presets.length; i++) {
-                            let kuva = data.presets[i]; //tehdään muuttuja kuva joka löytyy json tiedoston data.presets paikalta
+                        for (let i = 0; i < tieto.presets.length; i++) {
+                            //luodaan muuttujat kuva ja kuvaUrl ja käydään taulukko läpi
+                            let kuva = tieto.presets[i];
                             let kuvaUrl = `https://weathercam.digitraffic.fi/${kuva.id}.jpg`;
-                            teksti += `<h3>${kuva.id}</h3>`;
+                            /*teksti += `<h3>${kuva.id}</h3>`;*/
                             teksti += `<p>Kuva otettu: ${kuva.measuredTime}</p>`; 
                             teksti += `<img src="${kuvaUrl}" alt="Kuva liikenteestä" style="width: 100%">`;
                         }
