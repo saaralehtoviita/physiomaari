@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Physiotherapy on-site (Valencia) and online!</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+              html, body {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                }
+            .container {
+                flex: 1;
+                }
+
+        </style>
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html">PhysioMaari</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mpftraining.html">MPF-training</a></li>
+                        <li class="nav-item"><a class="nav-link" href="excercise.html">Guided excercises</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5">
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="excercise_kuva.png" alt="Image of Maari Lehtoviita doing weightlifting"/></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">Guide for oly-lifts</h1>
+                    <p>Here you can find instructions for Olympic weightlifting-movements</p>
+                </div>
+            </div>
+             <!--<h2>Excercises for hamstrings</h2>
+             <div id="muscleHamstring"></div>-->
+            <div class="container-fluid">
+             <div id="olympicW"></div>
+             <script>
+                //hamstring excercises
+                /*
+                fetch('https://api.api-ninjas.com/v1/exercises?muscle=hamstrings', {
+                    method: 'GET',
+                    headers: {
+                        'X-Api-Key': 'CMj3ttNFlgWBKJVtQJzlqQ==LOo42mt1BmV8kKws'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => { 
+                    let placeholder = document.querySelector("#muscleHamstring");
+
+                    let teksti= "";
+                    for (var i = 0; i < data.length; i++ ) {
+                        teksti = teksti + "<h3>" + data[i].name + "</h3>";
+                    }
+                
+
+                placeholder.innerHTML = teksti; 
+                //out = muuttuja, jossa käytetään JSON-objektista saatuja tietoja
+                //join = liittää taulukon kaikki tiedot yhdeksi merkkijonoksi
+                })
+            .catch(function(error) {
+            document.getElementById("muscleHamstring").innerHTML = "<p>COuld not fetch information</p>";
+                });
+                */
+
+                //Olympic Weightlifting movements
+                fetch('https://api.api-ninjas.com/v1/exercises?type=olympic_weightlifting', {
+                    method: 'GET',
+                    headers: {
+                        'X-Api-Key': 'CMj3ttNFlgWBKJVtQJzlqQ==LOo42mt1BmV8kKws'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => { 
+                    let placeholder = document.querySelector("#olympicW");
+
+                    let teksti= "";
+                    for (var i = 0; i < data.length; i++ ) {
+                        teksti = teksti + "<h3>" + data[i].name + "</h3>";
+                        teksti = teksti + "<p>Instructions: " + data[i].instructions + "</p>";
+                        teksti = teksti + "<p>Equipment: " + data[i].equipment + "</p>";
+                    } 
+                
+
+                placeholder.innerHTML = teksti; 
+                //out = muuttuja, jossa käytetään JSON-objektista saatuja tietoja
+                //join = liittää taulukon kaikki tiedot yhdeksi merkkijonoksi
+                })
+            .catch(function(error) {
+            document.getElementById("olympicW").innerHTML = "<p>COuld not fetch information</p>";
+                });
+
+
+             </script>
+             </div>
+            </div>
+        <!-- Footer-->
+        <div class="mt-5 mb-0 p-4 bg-dark text-white text-center">
+            <p>Copyright &copy; PhysioMaari 2025 </p>
+          </div>
+   
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
