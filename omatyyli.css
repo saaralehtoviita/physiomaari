@@ -10,12 +10,20 @@
     color: lightgrey;
 }
 
-.navbar-custom .nav-link:hover {
-    background-color: grey;
-    color: lightgrey;
+.nav-link:hover {
+    background-color: rgba(100, 149, 237, 0.4);
+    border-radius: 5px;
+    padding: 5px;
 }
+
 .navbar-brand {
     color: lightgrey;
+}
+
+.navbar-brand:hover {
+    background-color: rgba(100, 149, 237, 0.4);
+    border-radius: 5px;
+    padding: 5px;
 }
 
 html, body {
@@ -39,5 +47,32 @@ footer {
     background-color: #002F6C;
     text-align: center;
     padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  
+}
+
+footer .social-media {
+    display: flex;
+    gap: 10px;
+}
+
+footer .social-media a {
+    text-decoration: none;
+    color: lightgrey;          /* Linkkien väri */
+}
+
+footer .social-media .insta-link:hover {
+    background-color: #d62976;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+footer .social-media .youtube-link:hover {
+    background-color: #FF0033;
+    border-radius: 5px;
+    padding: 3px;
 }
 
