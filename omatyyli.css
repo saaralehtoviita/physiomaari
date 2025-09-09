@@ -1,0 +1,20 @@
+.color-fin {
+    background-color: #002F6C;
+}
+
+.navbar-custom .nav-link  {
+    color: lightgrey;
+}
+
+.nav-link.active {
+    color: lightgrey;
+}
+
+.navbar-custom .nav-link:hover {
+    background-color: grey;
+    color: lightgrey;
+}
+.navbar-brand {
+    color: lightgrey;
+}
+
