@@ -18,3 +18,26 @@
     color: lightgrey;
 }
 
+html, body {
+height: 100%;
+margin: 0;
+
+}
+
+body {
+display: flex;
+flex-direction: column;
+}
+
+main {
+    flex: 1; /*täyttää jäljellä olevan tilan, vaaditaan sticky footeriin*/
+}
+
+footer {
+    color: lightgrey;
+    margin-top: auto;
+    background-color: #002F6C;
+    text-align: center;
+    padding: 1rem 0;
+}
+
