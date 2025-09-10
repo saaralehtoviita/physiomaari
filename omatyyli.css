@@ -43,15 +43,31 @@ margin: 0;
 body {
 display: flex;
 flex-direction: column;
+background: #edf6ff;
 }
 
 main {
     flex: 1; /*täyttää jäljellä olevan tilan, vaaditaan sticky footeriin*/
 }
 
+/*About sivun tyylittelyt*/
+#about1, #about2, #about3 {
+    background-color: rgba(100, 149, 237, 0.4);
+    margin-top: 15px;
+    border-radius: 15px 50px;
+    padding: 15px;
+}
+
+#img-about1, #img-about2, #img-about3 {
+    border-radius: 50px 15px;
+}
+
+
+
 
 /*footerin tyylittelyt*/
 footer {
+    width: 100%;
     color: lightgrey;
     margin-top: auto;
     background-color: #002F6C;
@@ -67,6 +83,12 @@ footer {
 footer .social-media {
     display: flex;
     gap: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    footer .social-media {
+        display: block;
+    }
 }
 
 footer .social-media a {
@@ -85,4 +107,6 @@ footer .social-media .youtube-link:hover {
     border-radius: 5px;
     padding: 3px;
 }
+
+
 

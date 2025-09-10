@@ -33,20 +33,41 @@
     <div class="row">
         <!-- Left Column (Image) -->
         <div class="col-lg-6 col-md-6 col-12">
-            <img src="image_about.png" alt="Image of Maari Lehtoviita" class="img-fluid rounded mb-4 mb-lg-0 align-items-center">
+            <img src="kuvat/maari_imskeP.png" alt="Image of Maari Lehtoviita" class="img-fluid rounded mb-4 mb-lg-0 align-items-center">
         </div>
         <!-- Right Column (Text) -->
         <div class="col-lg-6 col-md-6 col-12">
+            <p>Contact me trough the contact form, per email or write to me on social media.</p>
+            <!-- Contact form-->
+            <form id="contact-form">
+                <div class="mb-3">
+                    <label for="user_name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="user_email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="user_email" name="user_email" placeholder="Your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+            </form>
+            <!--Contact information-->
             <h2 class="text-center mt-5">Contact information</h2>
             <p class="text-center mt-3"><i class="bi bi-envelope"></i> Email: physiomaari@gmail.com</p>
             <p class="text-center mt-3"><i class="bi bi-instagram"></i> Instagram:</p>
             <p class="text-center"><a href="https://www.instagram.com/physiomaari/" style="text-decoration:none;color:black;"> @physiomaari</a></p>
             <p class="text-center"><a href="https://www.instagram.com/maarilehtoviita/" style="text-decoration:none;color:black;"> @maarilehtoviita</a></p>
-            <p class="text-center"><a href="https://www.instagram.com/mpf.training/" style="text-decoration:none;color:black"> @mpftraining</a>  </p>
+            <p class="text-center"><a href="https://www.instagram.com/mpf.training/" style="text-decoration:none;color:black"> @mpf.training</a>  </p>
             <p class="text-center mt-3">Don't forget to check out my <a href="https://www.youtube.com/channel/UCo9qwZf0cLjpv70QvVoo6NQ" style="text-decoration:none;color:black;"><i class="bi bi-youtube" type="button"></i> YouTube-channel</a></p>
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <footer class="mt-3">
     <p>Copyright &copy; PhysioMaari 2025 </p>
