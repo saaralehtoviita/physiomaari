@@ -50,16 +50,116 @@ main {
     flex: 1; /*täyttää jäljellä olevan tilan, vaaditaan sticky footeriin*/
 }
 
-/*About sivun tyylittelyt*/
+/*About sivun tyylittelyt, tekstikentät ennen animaatiota näkymättömissä*/
 #about1, #about2, #about3 {
     background-color: rgba(100, 149, 237, 0.4);
     margin-top: 15px;
     border-radius: 15px 50px;
     padding: 15px;
+    opacity: 0;
 }
 
+/*Kuvat ennen animaatiota näkymättömissä*/
 #img-about1, #img-about2, #img-about3 {
-    border-radius: 50px 15px;
+    opacity: 0;
+}
+
+/*Animaatiot eka rivi*/
+
+#img-about1 {
+    animation-name: imgAppear1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes imgAppear1 {
+    to {
+        opacity: 1;
+    }
+}
+
+#about1 {
+    animation-name: aboutAppear2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes aboutAppear2 {
+    to {
+        opacity: 1;
+    }
+}
+
+/*Animaatiot toka rivi*/
+#img-about2 {
+    animation-name: imgAppear3;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+@keyframes imgAppear3 {
+    to {
+        opacity: 1;
+    }
+}
+
+#about2 {
+    animation-name: aboutAppear4;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+
+@keyframes aboutAppear4 {
+    to {
+        opacity: 1;
+    }
+}
+
+/*Animaatiot kolmas rivi*/
+#img-about3 {
+    animation-name: imgAppear5;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+}
+
+@keyframes imgAppear5 {
+    to {
+        opacity: 1;
+    }
+}
+
+#about3 {
+    animation-name: aboutAppear6;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+}
+
+@keyframes aboutAppear6 {
+    to {
+        opacity: 1;
+    }
+}
+
+/*Napin animaatiot*/
+
+#buttonAbout {
+    opacity: 0;
+    animation-name: buttonAppear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+}
+
+@keyframes buttonAppear {
+    to {
+        opacity: 1;
+    }
+    
 }
 
 
