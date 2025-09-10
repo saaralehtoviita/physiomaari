@@ -53,14 +53,19 @@ main {
 /*Etusivun karuselli*/
 
 .carousel-item {
-    background-color: grey;
-    height: 100px;
-    text-align: center;
+    background-color: rgb(131, 154, 196);
+    opacity: 0.8;
+    height: 250px;
     width: 100%;
 }
 
-.carousel.item p {
-    color: white;
+.carousel-text {
+    margin-top: 5px;
+    color: rgb(10, 8, 8);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 18px;
 }
 
 /*About sivun tyylittelyt, tekstikentät ennen animaatiota näkymättömissä*/
