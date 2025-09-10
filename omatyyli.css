@@ -146,7 +146,6 @@ main {
 }
 
 /*Napin animaatiot*/
-
 #buttonAbout {
     opacity: 0;
     animation-name: buttonAppear;
@@ -162,6 +161,24 @@ main {
     
 }
 
+/*Nappien tyylittelyt, hoverilla suurempi ja taustaväri muuttuu*/
+
+.btn {
+    background-color: #6495ED;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+    background-color: #002F6C;
+    color: white;
+}
+
+/*Accordion tyylittelyt (MPF-training ja My services-sivut*/
+
+.accordion-button, .accordion-button:not(.collapsed) {
+    background-color:#002F6C;
+}
 
 
 
