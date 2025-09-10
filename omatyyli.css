@@ -1,7 +1,14 @@
+/*Suomen lipun väri*/
 .color-fin {
     background-color: #002F6C;
 }
 
+/*toinen sininen*/
+.color-cornblue {
+    background-color: #6495ED;
+}
+
+/*bavipalkin tyylittelyt*/
 .navbar-custom .nav-link  {
     color: lightgrey;
 }
@@ -26,6 +33,7 @@
     padding: 5px;
 }
 
+/*koko sivuston yhteiset tyylittelyt*/
 html, body {
 height: 100%;
 margin: 0;
@@ -41,6 +49,8 @@ main {
     flex: 1; /*täyttää jäljellä olevan tilan, vaaditaan sticky footeriin*/
 }
 
+
+/*footerin tyylittelyt*/
 footer {
     color: lightgrey;
     margin-top: auto;
