@@ -50,6 +50,19 @@ main {
     flex: 1; /*täyttää jäljellä olevan tilan, vaaditaan sticky footeriin*/
 }
 
+/*Etusivun karuselli*/
+
+.carousel-item {
+    background-color: grey;
+    height: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+.carousel.item p {
+    color: white;
+}
+
 /*About sivun tyylittelyt, tekstikentät ennen animaatiota näkymättömissä*/
 #about1, #about2, #about3 {
     background-color: rgba(100, 149, 237, 0.4);
@@ -178,6 +191,11 @@ main {
 
 .accordion-button, .accordion-button:not(.collapsed) {
     background-color:#002F6C;
+    color: lightgrey;
+}
+
+.accordion-item {
+    background-color:rgb(189, 213, 235);
 }
 
 
