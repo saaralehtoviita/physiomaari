@@ -71,8 +71,12 @@ main {
 #index-page-intro {
   background-color: rgba(186, 187, 189, 0.7);
   padding: 15px;
-  margin-top: 150px;
+  margin-top: 200px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px;
   border-radius: 5px;
+  align-items: center;
 }
 
 #intro-background {
