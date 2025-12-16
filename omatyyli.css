@@ -69,7 +69,18 @@ main {
 }
 
 #index-page-intro {
-  background-color: white;
+  background-color: rgba(186, 187, 189, 0.7);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+#intro-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("kuvat/maari_ja_nennaEtusivu_taustakuvaP.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10px;
+  padding-bottom: 2px;
 }
 
 /*About sivun tyylittelyt, tekstikentät ennen animaatiota näkymättömissä*/
