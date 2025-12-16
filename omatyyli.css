@@ -202,6 +202,15 @@ main {
   }
 }
 
+#services-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("kuvat/maari_pistolSquatP2.png");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+}
+
 /*Nappien tyylittelyt, hoverilla suurempi ja taustaväri muuttuu*/
 
 .btn {
